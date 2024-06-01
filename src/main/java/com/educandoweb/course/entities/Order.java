@@ -2,6 +2,7 @@ package com.educandoweb.course.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+
 import com.educandoweb.course.entities.enuns.OrderStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,22 +12,20 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-
 @Entity
 @Table(name = "tb_order")
 public class Order implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)	
 private Long id;
 private Instant moment;
 private Integer OrderStatus;
 
 @ManyToOne
-@JoinColumn(name = "cliente_Id")
+@JoinColumn(name = "client_Id")
 private User client;
 	
 public Order() {
@@ -74,8 +73,9 @@ public void setOrderStatus(OrderStatus orderStatus) {
 	public void setClient(User client) {
 		this.client = client;	
 	}
-
 	
+	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
