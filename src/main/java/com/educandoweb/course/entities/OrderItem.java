@@ -97,11 +97,7 @@ public class OrderItem implements Serializable{
 			return false;
 		}
 		return true;
-	}
-	
-	
-	
-	
+	}	
 	
 }
 
